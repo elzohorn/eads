@@ -1,0 +1,37 @@
+
+<div>
+    <h2><span>Podcast</span> {{vm.podcast.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Title</span></dt>
+        <dd>
+            <span>{{vm.podcast.title}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.podcast.description}}</span>
+        </dd>
+        <dt><span>Author</span></dt>
+        <dd>
+            <span ng-repeat="author in vm.podcast.authors">
+                <a ui-sref="person-detail({id: author.id})">{{author.name}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span>Channel</span></dt>
+        <dd>
+            <a ui-sref="channel-detail({id:vm.podcast.channel.id})">{{vm.podcast.channel.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="podcast-detail.edit({id:vm.podcast.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

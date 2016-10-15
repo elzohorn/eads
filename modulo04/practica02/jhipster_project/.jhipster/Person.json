@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "producedPodcast",
+            "otherEntityName": "podcast",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "author"
+        },
+        {
+            "relationshipName": "subscribedPodcast",
+            "otherEntityName": "subscription",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "subscriber"
+        },
+        {
+            "relationshipName": "channel",
+            "otherEntityName": "channel",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "host"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161009195733",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "person",
+    "pagination": "infinite-scroll"
+}

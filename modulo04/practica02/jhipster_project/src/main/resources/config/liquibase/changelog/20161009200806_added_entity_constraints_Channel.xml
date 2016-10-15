@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Channel.
+    -->
+    <changeSet id="20161009200806-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="channels_id"
+                                 baseTableName="channel_host"
+                                 constraintName="fk_channel_host_channels_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+        <addForeignKeyConstraint baseColumnNames="hosts_id"
+                                 baseTableName="channel_host"
+                                 constraintName="fk_channel_host_hosts_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="person"/>
+        
+    </changeSet>
+</databaseChangeLog>

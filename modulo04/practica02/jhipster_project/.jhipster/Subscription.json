@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "subscriber",
+            "otherEntityName": "person",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "subscribedPodcast"
+        },
+        {
+            "relationshipName": "channel",
+            "otherEntityName": "channel",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "subscription"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20161009200455",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "subscription",
+    "pagination": "infinite-scroll"
+}

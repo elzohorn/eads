@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Subscription.
+    -->
+    <changeSet id="20161009200455-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="subscriber_id"
+                                 baseTableName="subscription"
+                                 constraintName="fk_subscription_subscriber_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="person"/>
+
+        <addForeignKeyConstraint baseColumnNames="subscriptions_id"
+                                 baseTableName="subscription_channel"
+                                 constraintName="fk_subscription_channel_subscriptions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="subscription"/>
+        <addForeignKeyConstraint baseColumnNames="channels_id"
+                                 baseTableName="subscription_channel"
+                                 constraintName="fk_subscription_channel_channels_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+        
+    </changeSet>
+</databaseChangeLog>

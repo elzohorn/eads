@@ -1,0 +1,34 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "author",
+            "otherEntityName": "person",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "producedPodcast"
+        },
+        {
+            "relationshipName": "channel",
+            "otherEntityName": "channel",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161009201421",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "podcast",
+    "pagination": "infinite-scroll"
+}
